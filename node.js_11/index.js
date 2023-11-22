@@ -2,8 +2,10 @@ const express = require('express');
 const app = express(); //-- http szervert tudunk vele inditani
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
+const cors = require('cors');
 // params application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: false }));
+app.use(cors());
 
 const db = mysql.createConnection({
     host: 'localhost',
